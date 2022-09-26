@@ -1,0 +1,29 @@
+@model List<ProvaLP3.ViewModels.LojaViewModel>
+
+@{
+    ViewData["Title"] = "Gerenciamento de Lojas";
+}
+
+<h1>Gerenciamento de Lojas</h1>
+@if(Model.Count == 0)
+{
+    <p>Não há nenhum loja cadastrada.</p>
+    <a class="a" href="/Loja/CadastrarLoja">Cadastre uma Loja</a>
+}
+else
+{
+    <p>A quantidade de lojas cadastradas é: @Model.Count</p>
+    <hr>
+
+    @foreach(var loja in Model)
+    {
+        <a class="a-title" href="/Loja/Show/@loja.Id">
+            <h3>@loja.Nome</h3>
+        </a>
+        <p>@loja.Descricao</p>
+        <a class="a" href="/Loja/Excluir/@loja.Id">Excluir</a>
+        <hr>
+    }
+
+    <a class="a" href="/Loja/CadastrarLoja">Cadastre uma loja</a>
+}

@@ -1,0 +1,16 @@
+@model ProvaLP3.ViewModels.LojaViewModel
+
+@{
+    ViewData["Title"] = "Detalhe da Loja";
+}
+
+<h1>@Model.Nome</h1>
+<hr>
+<a class="a" href="/Loja/Excluir/@Model.Id">Excluir</a>
+<hr>
+<p>Id: @Model.Id</p>
+<p>Nome: @Model.Nome</p>
+<p>Descrição: @Model.Descricao</p>
+<p>Andar: @Model.Andar</p>
+<p>Tipo de Loja: @Model.LojaDoCadu</p>
+<p>Email: @Model.Email</p>
